@@ -31,9 +31,10 @@ import './index.css';
 console.log('👋 This message is being logged by "renderer.js", included via webpack');
 
 import React from 'react';
-import { render } from 'react-dom'
-import App from './app/test'
+import { createRoot } from 'react-dom/client'
+import App from './app'
 import './assets/styles/app.css';
 
-// Now we can render our application into it
-render(React.createElement(App), document.getElementById('root'))
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(<App />);
